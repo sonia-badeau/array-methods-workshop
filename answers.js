@@ -48,12 +48,23 @@ function filterArray(array, func){
 
 console.log(filterArray(newArray, newFunction));
 
-function addNumber(number){
-    return number + 1;
-}
 
-function addArray (array, func){
-    return array.filter(func);
-}
+//Exercise 4
+//Write a function called longestWord that takes a string as argument, and returns the longest word in the string. 
+//You should use Array.prototype.reduce to do your work.
+//Hint: You can use String.prototype.split to split the string into an array of words.
 
-console.log(addArray(newArray, addNumber));
+var sentence = "Learning JS is quite hard";
+function longestWord(string){
+    var split = sentence.split(" ");
+    return split.reduce(function(acc, next){
+        if (acc.length > next.length){
+            return acc;
+        }
+        else {
+            return next;
+        }
+    })
+}
+longestWord
+
