@@ -68,3 +68,28 @@ function longestWord(string){
 }
 longestWord
 
+//Exercise 5
+//Write a function called countVowels that takes a string and returns the number of vowels in the string. 
+//You should use Array.prototype.reduce to do your work.
+//Hint: You can use String.prototype.split again. There is a way to use it to split a string by character. Try to Google it :)
+//Hint 2: You can create an array of vowels and use Array.prototype.indexOf to check if the current letter is a vowel.
+
+var sentence = "Learning JS is a little bit hard";
+var vowels = ["a", "e", "i", "o", "u"];
+
+function countVowels(string){
+    var split = string.split("");
+    var count = 0;
+    
+    split.forEach(function(currentLetter){
+        var pos = vowels.indexOf(currentLetter);
+        if (pos !== -1){
+            count ++
+        }
+        
+    });
+    
+    return count;
+}
+
+countVowels(sentence);
